@@ -1,6 +1,6 @@
 spring:
     datasource:
         driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/database?rewriteBatchedStatements=true
-        username: user
-        password: password
+        url: jdbc:mysql://totara.dev0aecbc5b505a.unique.teddev.com:3308/totara_yanbal?rewriteBatchedStatements=true
+        username: totara_yanbal
+        password: Fm9XZvOt+5GQou7r
