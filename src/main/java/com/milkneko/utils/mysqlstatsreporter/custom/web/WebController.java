@@ -16,4 +16,9 @@ public class WebController {
     public ResponseEntity<?> getTables(){
         return new ResponseEntity<>(mySqlManager.getTables(), HttpStatus.OK);
     }
+
+    @GetMapping("/get-tables-counter")
+    public ResponseEntity<?> getTablesCounter(){
+        return new ResponseEntity<>(mySqlManager.getTablesCounter(), HttpStatus.OK);
+    }
 }

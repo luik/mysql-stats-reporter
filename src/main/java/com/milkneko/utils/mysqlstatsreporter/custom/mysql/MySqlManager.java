@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 @Component
 public class MySqlManager {
@@ -20,5 +21,17 @@ public class MySqlManager {
         });
 
         return result;
+    }
+
+    public String getTablesCounter() {
+        StringJoiner stringJoiner = new StringJoiner("\n");
+
+        getTables().forEach(tableName -> {
+            jdbcTemplate.query("SELECT COUNT(*) FROM " + tableName, resultSet -> {
+                stringJoiner.add(tableName + ";" + resultSet.getLong(1));
+            });
+        });
+
+        return stringJoiner.toString();
     }
 }
